@@ -1,17 +1,33 @@
-plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.2.61'
+buildscript {
+    ext.kotlin_version = '1.2.61'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
+
+apply plugin: "java"
+apply plugin: "kotlin"
 
 group 'com.github.grambbledook.example'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-    compile "org.jooby:jooby:1.5.1"
+    compile "org.jooby:jooby-netty:1.5.1"
+    compile "org.jooby:jooby-lang-kotlin:1.5.1"
+
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.1.0")
+    testCompile("org.junit.jupiter:junit-jupiter-params:5.1.0")
 }
 
 compileKotlin {
