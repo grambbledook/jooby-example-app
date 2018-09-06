@@ -13,6 +13,10 @@ buildscript {
 apply plugin: "java"
 apply plugin: "kotlin"
 
+test {
+    useJUnitPlatform()
+}
+
 group 'com.github.grambbledook.example'
 version '1.0-SNAPSHOT'
 
@@ -28,6 +32,7 @@ dependencies {
 
     testCompile("org.junit.jupiter:junit-jupiter-api:5.1.0")
     testCompile("org.junit.jupiter:junit-jupiter-params:5.1.0")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:5.1.0")
 }
 
 compileKotlin {

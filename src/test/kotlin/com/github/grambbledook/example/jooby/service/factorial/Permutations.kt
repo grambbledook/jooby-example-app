@@ -9,6 +9,7 @@ class Permutations : ArgumentsProvider {
     override fun provideArguments(context: ExtensionContext?): Stream<out Arguments> =
             Stream.of(
                     Arguments.of(-1L, 0L),
+                    Arguments.of(0L, 0L),
                     Arguments.of(5L, 1L),
                     Arguments.of(9L, 1L),
                     Arguments.of(10L, 2L),
